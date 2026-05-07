@@ -60,7 +60,7 @@ const featuredProjects = [
   {
     title: 'Alfresco Entertainment Deck',
     category: 'Exterior',
-    imageUrl: 'https://images.unsplash.com/photo-1600585152203-602b8aa3a3c9?q=80&w=2070&auto=format&fit=crop',
+    imageUrl: '/exterior/image1.jpeg',
     link: '/exterior'
   },
   {

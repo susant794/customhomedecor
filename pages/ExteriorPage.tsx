@@ -8,37 +8,37 @@ const exteriorProjects = [
     id: 1,
     title: 'Hillside Infinity Pool',
     description: 'A breathtaking infinity pool and lounge area that capitalizes on panoramic views and natural topography.',
-    imageUrl: 'https://images.unsplash.com/photo-1542314831-068cd1dbb5b9?q=80&w=2070&auto=format&fit=crop',
+    imageUrl: '/exterior/image1.jpeg',
   },
   {
     id: 2,
     title: 'Modern Timber-Clad Villa',
     description: 'A striking facade combining dark timber cladding with large glass panels for a contemporary yet warm aesthetic.',
-    imageUrl: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=1965&auto=format&fit=crop',
+    imageUrl: '/exterior/image2.jpeg',
   },
   {
     id: 3,
     title: 'Secret Garden Courtyard',
     description: 'An intimate and secluded courtyard designed for quiet reflection, featuring a central water feature and climbing vines.',
-    imageUrl: 'https://images.unsplash.com/photo-1562016461-893c84a5a8a4?q=80&w=1964&auto=format&fit=crop',
+    imageUrl: '/exterior/image3.jpeg',
   },
   {
     id: 4,
     title: 'Fire & Water Terrace',
     description: 'An entertainer\'s dream terrace with a built-in fire pit, outdoor kitchen, and a sleek, minimalist water feature.',
-    imageUrl: 'https://images.unsplash.com/photo-1598925437430-a57648a73531?q=80&w=2070&auto=format&fit=crop',
+    imageUrl: '/exterior/image4.jpeg',
   },
   {
     id: 5,
     title: 'Sustainable Green Facade',
     description: 'A vertical garden that wraps around the building, offering natural cooling, improved air quality, and a unique visual identity.',
-    imageUrl: 'https://images.unsplash.com/photo-1594434259364-0010954b3412?q=80&w=1935&auto=format&fit=crop',
+    imageUrl: '/exterior/image5.jpeg',
   },
   {
     id: 6,
     title: 'Grand Entrance Landscaping',
     description: 'A carefully curated landscape design that creates an impressive and welcoming approach to the property with layered planting and lighting.',
-    imageUrl: 'https://images.unsplash.com/photo-1447065217122-3c8350548b3b?q=80&w=2070&auto=format&fit=crop',
+    imageUrl: '/exterior/image6.jpeg',
   },
 ];
 

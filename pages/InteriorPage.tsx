@@ -8,37 +8,37 @@ const interiorProjects = [
     id: 1,
     title: 'The Glass House Retreat',
     description: 'Floor-to-ceiling windows and an open-plan layout define this modern home, blurring the lines between the interior and the surrounding nature.',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
+    imageUrl: '/interior/image6.jpg',
   },
   {
     id: 2,
     title: 'Urban Industrial Kitchen',
     description: 'A functional yet stylish kitchen featuring exposed brick, stainless steel, and reclaimed wood for a chic, industrial aesthetic.',
-    imageUrl: 'https://images.unsplash.com/photo-1600607686527-6fb886290705?q=80&w=1974&auto=format&fit=crop',
+    imageUrl: '/interior/Image1.jpeg',
   },
   {
     id: 3,
     title: 'Coastal Serenity Bedroom',
     description: 'A tranquil master bedroom that captures the essence of coastal living with a light, airy palette and natural textures.',
-    imageUrl: 'https://images.unsplash.com/photo-1595526114035-0d45ed16da31?q=80&w=1974&auto=format&fit=crop',
+    imageUrl: '/interior/Image2.jpeg',  
   },
   {
     id: 4,
     title: 'Velvet & Gold Lounge',
     description: 'An opulent lounge area designed for entertaining, with rich velvet upholstery, brass accents, and custom mood lighting.',
-    imageUrl: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2158&auto=format&fit=crop',
+    imageUrl: '/interior/image3.jpeg',
   },
   {
     id: 5,
     title: 'Minimalist Home Office',
     description: 'A clutter-free workspace designed for focus and creativity, featuring integrated storage and ergonomic furniture.',
-    imageUrl: 'https://images.unsplash.com/photo-1596495577886-d9256f44238b?q=80&w=2070&auto=format&fit=crop',
+    imageUrl: '/interior/image4.jpeg',
   },
   {
     id: 6,
     title: 'Spa-Inspired Bathroom',
     description: 'A luxurious bathroom transformed into a personal spa with a freestanding tub, rainfall shower, and natural stone details.',
-    imageUrl: 'https://images.unsplash.com/photo-1599954033328-ca655a6d5c56?q=80&w=1964&auto=format&fit=crop',
+    imageUrl: '/interior/image5.jpg',
   },
 ];
 
