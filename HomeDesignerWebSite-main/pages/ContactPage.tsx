@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 // FIX: Imported `Variants` from framer-motion to correctly type animation variants.
 import { motion, Variants } from 'framer-motion';
 import { PhoneIcon, MailIcon as EmailIcon, LocationIcon } from '../components/icons';
 import { environment } from '@/environment/environment';
+import emailjs from '@emailjs/browser';
+import { useNavigate } from 'react-router-dom';
 
 // FIX: Explicitly typed `sectionVariants` with `Variants` to fix type inference issue where `ease` was a generic `string`.
 const sectionVariants: Variants = {
@@ -24,7 +26,37 @@ const itemVariants = {
 };
 
 const ContactPage: React.FC = () => {
-  return (
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+    
+    emailjs.send(
+      environment.emailjs.serviceId,
+      environment.emailjs.templateId,
+      {
+        ...data,
+        to_email: environment.email
+      },
+      environment.emailjs.publicKey
+    )
+    .then(() => {
+      setSuccess(true);
+      setTimeout(() => navigate('/'), 2000);
+    })
+    .catch((error) => {
+      console.error('Email send error:', error);
+      alert('Failed to send message. Please try again.');
+    })
+    .finally(() => {
+      setLoading(false);
+    });
+  };
     <div className="bg-brand-light">
       <div className="container mx-auto px-6 py-24">
         <motion.div 
@@ -48,7 +80,7 @@ const ContactPage: React.FC = () => {
             className="bg-white p-8 sm:p-12 rounded-lg shadow-lg"
           >
             <h2 className="font-serif text-2xl font-bold text-brand-dark">Send us a Message</h2>
-            <form action="#" method="POST" className="mt-8 space-y-6">
+            <form onSubmit={handleSubmit} className="mt-8 space-y-6">
               <div>
                 <label htmlFor="name" className="sr-only">Full name</label>
                 <input type="text" name="name" id="name" autoComplete="name" required className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-brand-teal focus:ring-brand-teal" placeholder="Full name" />
@@ -70,12 +102,18 @@ const ContactPage: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="w-full justify-center rounded-md border border-transparent bg-brand-teal py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 transition-all"
+                  disabled={loading}
+                  className="w-full justify-center rounded-md border border-transparent bg-brand-teal py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 transition-all disabled:opacity-50"
                 >
-                  Send Message
+                  {loading ? 'Sending...' : 'Send Message'}
                 </motion.button>
               </div>
             </form>
+            {success && (
+              <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                Message sent successfully! Redirecting to home page...
+              </div>
+            )}
           </motion.div>
 
           {/* Contact Info */}
