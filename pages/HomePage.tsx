@@ -152,7 +152,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="bg-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=2000&auto=format&fit=crop')" }}>
+      <section className="relative min-h-[55vh] sm:min-h-[65vh] md:min-h-[85vh] flex items-center bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=2000&auto=format&fit=crop')" }}>
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative container mx-auto px-6 text-white text-center">
             <motion.h1 
@@ -167,7 +167,7 @@ const HomePage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto"
+                className="mt-6 text-base sm:text-lg max-w-2xl mx-auto"
             >
                 A multidisciplinary studio that redefines laid-back luxury through interior architecture, design, and décor.
             </motion.p>
@@ -190,19 +190,19 @@ const HomePage: React.FC = () => {
       <section className="bg-brand-light py-12">
         <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="p-4">
-                <h3 className="text-4xl font-bold font-serif text-brand-teal"><AnimatedNumber value={15} />+</h3>
+                <h3 className="text-3xl sm:text-4xl font-bold font-serif text-brand-teal"><AnimatedNumber value={15} />+</h3>
                 <p className="text-gray-600 mt-2">Years of Experience</p>
             </div>
             <div className="p-4">
-                <h3 className="text-4xl font-bold font-serif text-brand-teal"><AnimatedNumber value={500} />+</h3>
+                <h3 className="text-3xl sm:text-4xl font-bold font-serif text-brand-teal"><AnimatedNumber value={500} />+</h3>
                 <p className="text-gray-600 mt-2">Projects Completed</p>
             </div>
             <div className="p-4">
-                <h3 className="text-4xl font-bold font-serif text-brand-teal"><AnimatedNumber value={20} />+</h3>
+                <h3 className="text-3xl sm:text-4xl font-bold font-serif text-brand-teal"><AnimatedNumber value={20} />+</h3>
                 <p className="text-gray-600 mt-2">Design Awards</p>
             </div>
             <div className="p-4">
-                <h3 className="text-4xl font-bold font-serif text-brand-teal"><AnimatedNumber value={99} />%</h3>
+                <h3 className="text-3xl sm:text-4xl font-bold font-serif text-brand-teal"><AnimatedNumber value={99} />%</h3>
                 <p className="text-gray-600 mt-2">Client Satisfaction</p>
             </div>
         </div>
@@ -255,7 +255,7 @@ const HomePage: React.FC = () => {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
               <motion.div key={index} variants={itemVariants} className="group relative overflow-hidden rounded-lg shadow-lg">
-                <img src={project.imageUrl} alt={project.title} className="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src={project.imageUrl} alt={project.title} className="w-full h-72 sm:h-80 md:h-96 object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6 text-white">
                     <span className="text-sm bg-brand-yellow text-brand-dark px-2 py-1 rounded-sm font-semibold">{project.category}</span>
@@ -275,7 +275,7 @@ const HomePage: React.FC = () => {
             <div className="text-center max-w-3xl mx-auto">
                 <h2 className="font-serif text-4xl font-bold">What Our Clients Say</h2>
             </div>
-            <div className="mt-12 relative h-64 flex items-center justify-center overflow-hidden">
+            <div className="mt-12 relative h-auto md:h-64 flex items-center justify-center overflow-hidden py-12 md:py-0">
                  <AnimatePresence mode="wait">
                     <motion.div
                         key={currentIndex}
