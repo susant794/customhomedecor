@@ -13,6 +13,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import SocialSidebar from './components/SocialSidebar';
 import { CloseIcon, CheckCircleIcon, UserIcon, MailIcon, PhoneIcon, SparklesIcon, ArrowRightIcon } from './components/icons';
+import { environment } from '@/environment/environment';
 
 interface FormData {
   name: string;
@@ -79,12 +80,24 @@ const InquiryPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
 
     setFormStatus('submitting');
     console.log('Form Submitted:', formData);
-    // Simulate API call
+
+    // Format WhatsApp number with country code (91 for India)
+    let whatsappNumber = String(environment.whatsapp).replace(/\D/g, '');
+    if (!whatsappNumber.startsWith('91')) {
+      whatsappNumber = '91' + whatsappNumber;
+    }
+    
+    const whatsappMessage = `Hello Custom Home Decor,%0A%0AMy name is ${encodeURIComponent(formData.name)}.%0AEmail: ${encodeURIComponent(formData.email)}.%0APhone: ${encodeURIComponent(formData.phone)}.%0AService: ${encodeURIComponent(formData.service)}.%0AMessage: ${encodeURIComponent(formData.message || 'N/A')}.`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+    window.open(whatsappUrl, '_blank');
+
+    // Simulate API call and show success state
     await new Promise(resolve => setTimeout(resolve, 1500));
     setFormStatus('success');
     // Close modal after showing success message
     setTimeout(() => {
-        onClose();
+      onClose();
     }, 2500);
   };
 
