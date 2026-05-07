@@ -6,8 +6,8 @@ export const environment = {
   instagram: "custom_home_decor",
   map: "Sinjini Apartment,GH-1,Ground Floor,Kalipark,Bablatala,Kolkata-700136",
   emailjs: {
-    serviceId: "your_service_id", // Replace with your EmailJS service ID
-    templateId: "your_template_id", // Replace with your EmailJS template ID
-    publicKey: "your_public_key" // Replace with your EmailJS public key
+    serviceId: "service_l45ezed", // Replace with your EmailJS service ID
+    templateId: "template_av4fdyk", // Replace with your EmailJS template ID
+    publicKey: "iHDVaOb31b2EREunV" // Replace with your EmailJS public key
   }
 }
