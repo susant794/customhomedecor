@@ -154,7 +154,7 @@ const InquiryPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
         >
           <motion.div
             variants={modalVariants}
-            className="bg-white rounded-2xl shadow-xl w-full max-w-4xl overflow-hidden flex flex-col md:flex-row"
+            className="bg-white rounded-2xl shadow-xl w-full max-w-full sm:max-w-3xl lg:max-w-4xl max-h-[calc(100vh-2rem)] overflow-hidden flex flex-col md:flex-row"
             role="dialog"
             aria-modal="true"
             aria-labelledby="popup-title"
@@ -177,7 +177,7 @@ const InquiryPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
                     </motion.div>
                 </div>
             </div> */}
-         <div className="w-full h-48 md:h-auto md:w-1/2 relative">
+         <div className="w-full min-h-[280px] md:h-auto md:w-1/2 relative">
   {/* <img 
     src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1854&auto=format&fit=crop" 
     alt="Modern interior design" 
@@ -185,16 +185,16 @@ const InquiryPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
   /> */}
 
   {/* White overlay behind text */}
-  <div className="absolute inset-0 bg-white/95 p-8 flex flex-col justify-center items-center text-center">
+  <div className="absolute inset-0 bg-white/95 p-6 sm:p-8 flex flex-col justify-center items-center text-center">
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.5 } }}
       className="flex flex-col items-center"
     >
       {/* Big logo centered */}
-      <img src="./logo.png" alt="Logo" className="h-37 w-auto mb-4" />
+      <img src="./logo.png" alt="Logo" className="h-40 w-auto mb-4" />
 
-      <h3 className="font-serif text-3xl font-bold text-gray-900" style={{ color: '#39B066' }}>Let's Design Your Dream Home.</h3>
+      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900" style={{ color: '#39B066' }}>Let's Design Your Dream Home.</h3>
       <p className="mt-2 text-gray-700 hidden md:block" style={{ color: '#0c697eff' }}>
         Your vision, our expertise. Fill out the form to begin your journey with us.
       </p>
@@ -205,7 +205,7 @@ const InquiryPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
 
 
             {/* Form Section */}
-            <div className="w-full md:w-1/2 p-8 relative">
+            <div className="w-full md:w-1/2 p-6 sm:p-8 relative overflow-y-auto">
                 <button 
                   onClick={onClose} 
                   className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10" 
