@@ -140,7 +140,7 @@ const ContactPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-brand-dark">Email Us</h3>
-                <a href="mailto:contact@customhomedecor.com" className="mt-1 text-brand-teal hover:underline">{`${environment?.email}`}</a>
+                <a href={`mailto:${environment?.email}`} className="mt-1 text-brand-teal hover:underline">{`${environment?.email}`}</a>
               </div>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg flex items-start space-x-6">
