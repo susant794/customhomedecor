@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: 
+
+# Sitemap location
+Sitemap: https://customhomedecor.in/sitemap.xml
+
+# Crawl delay to be respectful to server resources
+Crawl-delay: 1
