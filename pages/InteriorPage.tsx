@@ -1,7 +1,8 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
+import { updatePageSEO, pageConfigs, generateServiceSchema } from '../utils/seoUtils';
 
 const interiorProjects = [
   {
@@ -64,6 +65,14 @@ const itemVariants = {
 };
 
 const InteriorPage: React.FC = () => {
+  // Update page SEO on component mount
+  useEffect(() => {
+    updatePageSEO({
+      ...pageConfigs.interior,
+      schema: generateServiceSchema('Interior Design', 'Professional interior design services for homes, flats, offices, and modular kitchens in Kolkata, New Town, West Bengal'),
+    });
+  }, []);
+
   return (
     <div className="bg-white py-16 sm:py-24">
       <div className="container mx-auto px-6">

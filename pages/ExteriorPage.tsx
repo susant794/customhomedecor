@@ -1,7 +1,8 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
+import { updatePageSEO, pageConfigs, generateServiceSchema } from '../utils/seoUtils';
 
 const exteriorProjects = [
   {
@@ -64,6 +65,14 @@ const itemVariants = {
 };
 
 const ExteriorPage: React.FC = () => {
+  // Update page SEO on component mount
+  useEffect(() => {
+    updatePageSEO({
+      ...pageConfigs.exterior,
+      schema: generateServiceSchema('Exterior Design', 'Professional exterior design services including landscaping, facade design, and outdoor spaces in Kolkata, West Bengal'),
+    });
+  }, []);
+
   return (
     <div className="bg-brand-light py-16 sm:py-24">
       <div className="container mx-auto px-6">

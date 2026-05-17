@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 // FIX: Imported `Variants` from framer-motion to correctly type animation variants.
 import { motion, Variants, useInView, useMotionValue, useTransform, animate, AnimatePresence } from 'framer-motion';
 import { ArrowRightIcon, QuoteIcon, InteriorIcon, ExteriorIcon, FurnitureIcon, VisualizationIcon, ChevronLeftIcon, ChevronRightIcon } from '../components/icons';
+import { updatePageSEO, pageConfigs, generateLocalBusinessSchema, generateOrganizationSchema } from '../utils/seoUtils';
 
 const services = [
   {
@@ -132,6 +133,14 @@ const AnimatedNumber: React.FC<{ value: number }> = ({ value }) => {
 
 const HomePage: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Update page SEO on component mount
+    useEffect(() => {
+        updatePageSEO({
+            ...pageConfigs.home,
+            schema: generateLocalBusinessSchema(),
+        });
+    }, []);
 
     const nextTestimonial = useCallback(() => {
         setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));

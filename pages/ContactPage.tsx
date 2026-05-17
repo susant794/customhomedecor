@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // FIX: Imported `Variants` from framer-motion to correctly type animation variants.
 import { motion, Variants } from 'framer-motion';
 import { PhoneIcon, MailIcon as EmailIcon, LocationIcon } from '../components/icons';
 import { environment } from '@/environment/environment';
 import emailjs from '@emailjs/browser';
 import { useNavigate } from 'react-router-dom';
+import { updatePageSEO, pageConfigs } from '../utils/seoUtils';
 
 // FIX: Explicitly typed `sectionVariants` with `Variants` to fix type inference issue where `ease` was a generic `string`.
 const sectionVariants: Variants = {
@@ -29,6 +30,11 @@ const ContactPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
+
+  // Update page SEO on component mount
+  useEffect(() => {
+    updatePageSEO(pageConfigs.contact);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

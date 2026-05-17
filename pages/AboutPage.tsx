@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // FIX: Imported `Variants` from framer-motion to correctly type animation variants.
 import { motion, Variants } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { ArrowRightIcon, InteriorIcon, ExteriorIcon, FurnitureIcon } from '../components/icons';
+import { updatePageSEO, pageConfigs } from '../utils/seoUtils';
 
 const teamMembers = [
   {
@@ -63,6 +64,11 @@ const itemVariants = {
 };
 
 const AboutPage: React.FC = () => {
+   // Update page SEO on component mount
+   useEffect(() => {
+     updatePageSEO(pageConfigs.about);
+   }, []);
+
    const handleClick=()=>{
      window.scrollTo({ top: 0, behavior: 'smooth' })
   }
