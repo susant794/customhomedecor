@@ -33,10 +33,7 @@ export default defineConfig(({ mode }) => {
         }
       },
       server: {
-        mimeTypes: {
-          '.xml': 'application/xml',
-          '.txt': 'text/plain'
-        }
+        middlewareMode: true
       }
     };
 });
