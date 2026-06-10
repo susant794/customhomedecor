@@ -4,7 +4,7 @@ import { InstagramIcon, MailIcon, WhatsAppIcon } from './icons';
 import { environment } from '@/environment/environment';
 
 const Footer: React.FC = () => {
-  const linkClass = "text-gray-400 hover:text-white transition-colors";
+  const linkClass = "text-gray-100 hover:text-white underline focus:outline-none focus:ring-2 focus:ring-brand-yellow rounded px-2 py-1 transition-colors";
   const handleClick=()=>{
      window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -19,9 +19,9 @@ const Footer: React.FC = () => {
               An acclaimed multidisciplinary studio specializing in interior architecture, design, and décor that redefines laid-back luxury.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href={`https://wa.me/${environment?.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#25D366] transition-colors"><WhatsAppIcon className="w-6 h-6" /></a>
-              <a href={`https://instagram.com/${environment?.instagram}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#E1306C] transition-colors"><InstagramIcon className="w-6 h-6" /></a>
-              <a href={`mailto:${environment?.email}`} className="text-gray-400 hover:text-[#EA4335] transition-colors"><MailIcon className="w-6 h-6" /></a>
+              <a href={`https://wa.me/${environment?.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-[#25D366] transition-colors focus:outline-none focus:ring-2 focus:ring-[#25D366] rounded p-2" aria-label="Contact us on WhatsApp"><WhatsAppIcon className="w-6 h-6" /></a>
+              <a href={`https://instagram.com/${environment?.instagram}`} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-[#E1306C] transition-colors focus:outline-none focus:ring-2 focus:ring-[#E1306C] rounded p-2" aria-label="Follow us on Instagram"><InstagramIcon className="w-6 h-6" /></a>
+              <a href={`mailto:${environment?.email}`} className="text-gray-200 hover:text-[#EA4335] transition-colors focus:outline-none focus:ring-2 focus:ring-[#EA4335] rounded p-2" aria-label="Send us an email"><MailIcon className="w-6 h-6" /></a>
             </div>
           </div>
           

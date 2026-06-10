@@ -52,14 +52,24 @@ const Header: React.FC = () => {
   const activeLinkStyle = {
     textDecoration: 'underline',
     textUnderlineOffset: '8px',
-    textDecorationColor: '#2D7A73',
+    textDecorationColor: '#1a5f54',
     textDecorationThickness: '2px',
-    color: '#2D7A73',
+    color: '#1a5f54',
   };
 
   const activeMobileLinkStyle = {
-    color: '#2D7A73',
+    color: '#1a5f54',
     fontWeight: '600',
+    textDecoration: 'underline',
+    textUnderlineOffset: '4px',
+  };
+
+  const inactiveLinkStyle = {
+    textDecoration: 'underline',
+    textUnderlineOffset: '4px',
+    textDecorationColor: '#1f2937',
+    textDecorationThickness: '1px',
+    opacity: 0.8,
   };
 
   // FIX: Explicitly typed `mobileMenuVariants` with `Variants` to fix type inference issue.
@@ -83,7 +93,7 @@ const Header: React.FC = () => {
                  <motion.a
                     key={index}
                     href={item.href}
-                    className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                    className="flex items-center gap-2 text-gray-100 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-brand-yellow rounded px-2 py-1"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
@@ -133,8 +143,8 @@ const Header: React.FC = () => {
               onClick={handleClick}
                 to={link.path}
                 end={link.path === '/'}
-                className="text-gray-600 hover:text-brand-teal transition-colors duration-300"
-                style={({ isActive }) => (isActive ? activeLinkStyle : {})}
+                className="text-gray-800 hover:text-brand-teal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-teal rounded px-2 py-1"
+                style={({ isActive }) => (isActive ? activeLinkStyle : inactiveLinkStyle)}
               >
                 {link.name}
               </NavLink>
@@ -147,7 +157,7 @@ const Header: React.FC = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="hidden md:block bg-brand-teal text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-all duration-300"
+          className="hidden md:block bg-brand-teal text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-teal"
         >
           Download Designs
         </motion.a>
@@ -159,7 +169,7 @@ const Header: React.FC = () => {
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
-            className="z-[60] relative p-2 -mr-2"
+            className="z-[60] relative p-2 -mr-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-teal rounded"
           >
             <AnimatePresence initial={false} mode="wait">
               <motion.div
@@ -202,7 +212,7 @@ const Header: React.FC = () => {
                   to={link.path}
                   end={link.path === '/'}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-3xl text-gray-700 hover:text-brand-teal transition-colors duration-300"
+                  className="text-3xl text-gray-800 hover:text-brand-teal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-teal rounded px-4 py-2"
                   style={({ isActive }) => (isActive ? activeMobileLinkStyle : {})}
                 >
                   {link.name}
@@ -214,7 +224,7 @@ const Header: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-4 bg-brand-teal text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-all duration-300"
+                className="mt-4 bg-brand-teal text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-teal"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Download Designs

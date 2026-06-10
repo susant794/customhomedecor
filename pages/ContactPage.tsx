@@ -146,7 +146,7 @@ const ContactPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-brand-dark">Email Us</h3>
-                <a href={`mailto:${environment?.email}`} className="mt-1 text-brand-teal hover:underline">{`${environment?.email}`}</a>
+                <a href={`mailto:${environment?.email}`} className="mt-1 text-brand-teal hover:underline underline focus:outline-none focus:ring-2 focus:ring-brand-teal rounded px-2 py-1 inline-block">{`${environment?.email}`}</a>
               </div>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg flex items-start space-x-6">
@@ -155,7 +155,7 @@ const ContactPage: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-brand-dark">Call Us</h3>
-                <a href="tel:+911234567890" className="mt-1 text-brand-teal hover:underline">{`${environment?.phoneNumber1}`}</a>
+                <a href="tel:+911234567890" className="mt-1 text-brand-teal hover:underline underline focus:outline-none focus:ring-2 focus:ring-brand-teal rounded px-2 py-1 inline-block">{`${environment?.phoneNumber1}`}</a>
               </div>
             </div>
           </motion.div>

@@ -221,7 +221,7 @@ const InquiryPopup: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
             <div className="w-full md:w-1/2 p-6 sm:p-8 relative overflow-y-auto">
                 <button 
                   onClick={onClose} 
-                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10" 
+                  className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-brand-teal rounded p-1" 
                   aria-label="Close popup"
                 >
                   <CloseIcon className="w-6 h-6" />
